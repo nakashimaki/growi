@@ -70,7 +70,9 @@
     "server": "npm run server:dev",
     "// start": "npm run server:prod",
     "version": "node -p \"require('./package.json').version\"",
-    "webpack": "webpack"
+    "webpack": "webpack",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "//": [
@@ -167,10 +169,16 @@
     ],
     "@atlaskit/drawer": "^5.3.7",
     "@atlaskit/navigation-next": "^8.0.5",
+    "@babel/core": "^7.12.10",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/plugin-proposal-decorators": "^7.10.5",
     "@browser-bunyan/console-formatted-stream": "^1.5.3",
     "@handsontable/react": "=2.1.0",
+    "@storybook/addon-actions": "^6.1.11",
+    "@storybook/addon-essentials": "^6.1.11",
+    "@storybook/addon-knobs": "^6.1.11",
+    "@storybook/addon-links": "^6.1.11",
+    "@storybook/react": "^6.1.11",
     "@types/bunyan": "^1.8.6",
     "@types/bunyan-format": "^0.2.3",
     "@types/cookie-parser": "^1.4.2",
@@ -200,7 +208,7 @@
     "codemirror": "^5.48.4",
     "colors": "^1.2.5",
     "connect-browser-sync": "^2.1.0",
-    "core-js": "=2.6.9",
+    "core-js": "^3.1.4",
     "css-loader": "^3.0.0",
     "csv-to-markdown-table": "^1.0.1",
     "diff2html": "^3.1.2",
