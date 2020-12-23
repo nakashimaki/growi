@@ -6,6 +6,15 @@ module.exports = {
   webpackFinal: (config) => {
     config.resolve.alias['~'] = path.resolve(__dirname, '../src/');
     config.resolve.alias['^'] = path.resolve(__dirname, '../');
+    config.module.rules.push({
+      test: /\.scss$/,
+      use: [
+        'style-loader',
+        'css-loader',
+        'sass-loader'
+      ],
+      include: path.resolve(__dirname, '../'),
+    })
     return config;
   },
 };
