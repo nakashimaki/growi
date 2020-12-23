@@ -19,7 +19,7 @@ import { withUnstatedContainers } from '../UnstatedUtils';
 import AppContainer from '../../services/AppContainer';
 import NavigationContainer from '../../services/NavigationContainer';
 
-import UserPicture from '../User/UserPicture';
+import UserPicture from '../User/UserPicture/UserPicture';
 
 import SidebarDrawerIcon from '../Icons/SidebarDrawerIcon';
 import SidebarDockIcon from '../Icons/SidebarDockIcon';

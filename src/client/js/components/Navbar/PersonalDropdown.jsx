@@ -7,7 +7,7 @@ import {
 
 import { useCurrentUser } from '~/stores/context';
 
-import UserPicture from '../User/UserPicture';
+import UserPicture from '../User/UserPicture/UserPicture';
 
 const PersonalDropdownButton = () => {
   const { data: user } = useCurrentUser();

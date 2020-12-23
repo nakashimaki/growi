@@ -11,7 +11,7 @@ import { useRecentlyUpdatedSWR } from '~/stores/page';
 import { toastError } from '../../util/apiNotification';
 
 import FormattedDistanceDate from '../FormattedDistanceDate';
-import UserPicture from '../User/UserPicture';
+import UserPicture from '../User/UserPicture/UserPicture';
 
 const logger = loggerFactory('growi:cli:RecentChanges');
 

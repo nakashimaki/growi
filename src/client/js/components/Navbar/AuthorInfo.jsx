@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { userPageRoot } from '~/utils/path-utils';
 
-import UserPicture from '../User/UserPicture';
+import UserPicture from '../User/UserPicture/UserPicture';
 
 const AuthorInfo = (props) => {
   const {

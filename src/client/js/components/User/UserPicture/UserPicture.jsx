@@ -83,7 +83,6 @@ const withTooltip = (RootElm) => {
 
 
 const UserPicture = (props) => {
-
   const [isControllable, setControllable] = useState(false);
 
   // turn isControllable to 'true' when CSR
