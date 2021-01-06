@@ -20,6 +20,7 @@ services:
     ports:
       - 3000:3000
       - 3001:3001 # for browser-sync
+      - 6006:6006 # for storybook
 
     volumes:
       - ..:/workspace/growi:delegated
