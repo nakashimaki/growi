@@ -3,10 +3,10 @@ import React from 'react';
 import { Story } from '@storybook/react/types-6-0';
 
 import { withKnobs } from '@storybook/addon-knobs';
-import { BookmarkButton } from '../../components/Atoms/BookmarkButton';
+import { BookmarkButton } from '~/components/Atoms/BookmarkButton';
 
 export default {
-  title: 'atoms/BookmarkButton',
+  title: 'Atoms/BookmarkButton',
   decorators: [withKnobs],
 };
 
