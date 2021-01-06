@@ -3,17 +3,21 @@ import {
 } from 'next';
 import Head from 'next/head';
 
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
+
 import { CrowiRequest } from '~/interfaces/crowi-request';
 import { renderScriptTagByName, renderHighlightJsStyleTag } from '~/service/cdn-resources-loader';
 import loggerFactory from '~/utils/logger';
 import { CommonProps, getServerSideCommonProps } from '~/utils/nextjs-page-utils';
 import { isUserPage } from '~/utils/path-utils';
 
+import { serializeUserSecurely } from '../server/models/serializers/user-serializer';
 import BasicLayout from '../components/BasicLayout';
 
-import GrowiSubNavigation from '../client/js/components/Navbar/GrowiSubNavigation';
+// import GrowiSubNavigation from '../client/js/components/Navbar/GrowiSubNavigation';
 // import GrowiSubNavigationSwitcher from '../client/js/components/Navbar/GrowiSubNavigationSwitcher';
-import DisplaySwitcher from '../client/js/components/Page/DisplaySwitcher';
+// import DisplaySwitcher from '../client/js/components/Page/DisplaySwitcher';
 // import PageStatusAlert from '../client/js/components/PageStatusAlert';
 
 import {
@@ -34,6 +38,8 @@ type Props = CommonProps & {
 
   page: any,
   pageUser?: any,
+  redirectTo?: string;
+  redirectFrom?: string;
 
   appTitle: string,
   siteUrl: string,
@@ -47,6 +53,7 @@ type Props = CommonProps & {
 };
 
 const GrowiPage: NextPage<Props> = (props: Props) => {
+  const router = useRouter();
 
   useCurrentUser(props.currentUser != null ? JSON.parse(props.currentUser) : null);
   useCurrentPagePath(props.currentPagePath);
@@ -65,6 +72,15 @@ const GrowiPage: NextPage<Props> = (props: Props) => {
     page = JSON.parse(props.page);
   }
   useCurrentPageSWR(page);
+
+  // Rewrite browser url by Shallow Routing https://nextjs.org/docs/routing/shallow-routing
+  useEffect(() => {
+    if (props.redirectTo != null) {
+      router.push('/[[...path]]', props.redirectTo, { shallow: true });
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
 
   return (
     <>
@@ -90,7 +106,7 @@ const GrowiPage: NextPage<Props> = (props: Props) => {
           <div className="row">
             <div className="col grw-page-content-container">
               <div id="content-main" className="content-main container">
-                <DisplaySwitcher />
+                {/* <DisplaySwitcher /> */}
                 <div id="page-editor-navbar-bottom-container" className="d-none d-edit-block"></div>
                 {/* <PageStatusAlert /> */}
               </div>
@@ -131,12 +147,15 @@ async function injectPageInformation(context: GetServerSidePropsContext, props: 
 
   // get props recursively
   if (page.redirectTo) {
+    // Pass to rewrite browser url
+    props.redirectTo = page.redirectTo;
+    props.redirectFrom = pagePath;
     logger.debug(`Redirect to '${page.redirectTo}'`);
     return injectPageInformation(context, props, page.redirectTo);
   }
 
   await page.populateDataToShowRevision();
-  props.page = JSON.stringify(pageService.serializeToObj(page));
+  props.page = JSON.stringify(serializeUserSecurely(page));
 }
 
 async function injectPageUserInformation(context: GetServerSidePropsContext, props: Props): Promise<void> {
