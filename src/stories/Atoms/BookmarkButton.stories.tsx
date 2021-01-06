@@ -3,15 +3,15 @@ import React from 'react';
 import { Story } from '@storybook/react/types-6-0';
 
 import { withKnobs } from '@storybook/addon-knobs';
-import UserPicture from './UserPicture';
+import { BookmarkButton } from '../../components/Atoms/BookmarkButton';
 
 export default {
-  title: 'atoms/UserPicture',
+  title: 'atoms/BookmarkButton',
   decorators: [withKnobs],
 };
 
 export const _Default: Story = () => {
   return (
-    <UserPicture user={{ username: 'testUsername', name: 'testName' }} />
+    <BookmarkButton />
   );
 };
