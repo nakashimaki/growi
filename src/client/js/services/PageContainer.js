@@ -168,12 +168,13 @@ export default class PageContainer extends Container {
   /**
    * whether to display tag labels
    */
-  get isAbleToShowTagLabel() {
-    const { isUserPage } = this.state;
-    const { isSharedUser } = this.appContainer;
+  // isAbleToShowTagLabel method has already been 'swr' on ui.tsx
+  // get isAbleToShowTagLabel() {
+  //   const { isUserPage } = this.state;
+  //   const { isSharedUser } = this.appContainer;
 
-    return (!isUserPage && !isSharedUser);
-  }
+  //   return (!isUserPage && !isSharedUser);
+  // }
 
   /**
    * whether to display page management
@@ -211,12 +212,13 @@ export default class PageContainer extends Container {
    * whether to like button
    * not displayed on user page
    */
-  get isAbleToShowLikeButton() {
-    const { isUserPage } = this.state;
-    const { isSharedUser } = this.appContainer;
+  // isAbleToShowLikeButton has already been made 'swr/ in ui.tsx
+  // get isAbleToShowLikeButton() {
+  //   const { isUserPage } = this.state;
+  //   const { isSharedUser } = this.appContainer;
 
-    return (!isUserPage && !isSharedUser);
-  }
+  //   return (!isUserPage && !isSharedUser);
+  // }
 
   /**
    * whether to Empty Trash Page

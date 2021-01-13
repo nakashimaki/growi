@@ -9,19 +9,23 @@ import BookmarkButton from '../BookmarkButton';
 import LikeButton from '../LikeButton';
 import PageManagement from '../Page/PageManagement';
 
+import { useIsAbleToShowPageReactionButtons, useIsAbleToShowLikeButton } from '~/stores/ui';
+
 const SubnavButtons = (props) => {
   const {
     appContainer, navigationContainer, pageContainer, isCompactMode,
   } = props;
 
+  const { data: isAbleToShowLikeButton } = useIsAbleToShowLikeButton();
+
   /* eslint-enable react/prop-types */
 
   /* eslint-disable react/prop-types */
-  const PageReactionButtons = ({ pageContainer }) => {
+  const PageReactionButtons = () => {
 
     return (
       <>
-        {pageContainer.isAbleToShowLikeButton && (
+        {isAbleToShowLikeButton && (
           <span>
             <LikeButton />
           </span>
@@ -37,14 +41,15 @@ const SubnavButtons = (props) => {
 
   const { editorMode } = navigationContainer.state;
   const isViewMode = editorMode === 'view';
+  const { data: isAbleToShowPageReactionButtons } = useIsAbleToShowPageReactionButtons();
 
   return (
     <>
       {isViewMode && (
-      <>
-        { pageContainer.isAbleToShowPageReactionButtons && <PageReactionButtons appContainer={appContainer} pageContainer={pageContainer} /> }
-        { pageContainer.isAbleToShowPageManagement && <PageManagement isCompactMode={isCompactMode} /> }
-      </>
+        <>
+          { isAbleToShowPageReactionButtons && <PageReactionButtons /> }
+          { pageContainer.isAbleToShowPageManagement && <PageManagement isCompactMode={isCompactMode} /> }
+        </>
       )}
     </>
   );
