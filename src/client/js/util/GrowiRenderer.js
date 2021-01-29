@@ -18,6 +18,7 @@ import BlockdiagConfigurer from './markdown-it/blockdiag';
 import DrawioViewerConfigurer from './markdown-it/drawio-viewer';
 import TableWithHandsontableButtonConfigurer from './markdown-it/table-with-handsontable-button';
 import HeaderWithEditLinkConfigurer from './markdown-it/header-with-edit-link';
+import MermaidConfigurer from './markdown-it/mermaid';
 
 const logger = require('@alias/logger')('growi:util:GrowiRenderer');
 
@@ -73,6 +74,7 @@ export default class GrowiRenderer {
       new DrawioViewerConfigurer(appContainer),
       new PlantUMLConfigurer(appContainer),
       new BlockdiagConfigurer(appContainer),
+      new MermaidConfigurer(appContainer),
     ];
 
     // add configurers according to mode
