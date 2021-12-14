@@ -10173,7 +10173,7 @@ inherits@2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
 
-ini@^1.3.0, ini@^1.3.2, ini@^1.3.4, ini@^1.3.5:
+ini@^1.3.2, ini@^1.3.4, ini@^1.3.5, ini@~1.3.0:
   version "1.3.8"
   resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.8.tgz#a29da425b48806f34767a4efce397269af28432c"
   integrity sha512-JV/yugV2uzW5iMRSiZAyDtQd+nxtUnjeLt0acNdw98kKLrvuRVyB80tsREOE7yvGVgalhZ6RNXCmEHkUKBKxew==
@@ -17924,8 +17924,9 @@ signal-exit@^3.0.2:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
 
 simple-load-script@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/simple-load-script/-/simple-load-script-1.0.2.tgz#d92951fe7b601ad90af8c9429bd4b2ee127ab8a3"
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/simple-load-script/-/simple-load-script-1.0.3.tgz#386bd3ece78dcdb2cee75956cbd22247930d9046"
+  integrity sha512-uzkQFI6ox63k0CMK7AtEZ6NXe4HLMDxBsN5UCjbwY5DgAdREmBzmsxWQmiuvRPHHTsQ3ad00/aNYiNLYdphZLw==
 
 simple-swizzle@^0.2.2:
   version "0.2.2"
