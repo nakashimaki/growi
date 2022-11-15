@@ -173,7 +173,7 @@
     "colors": "^1.2.5",
     "connect-browser-sync": "^2.1.0",
     "core-js": "=2.6.9",
-    "css-loader": "^3.0.0",
+    "css-loader": "^6.7.2",
     "csv-to-markdown-table": "^1.0.1",
     "diff2html": "^3.1.2",
     "eazy-logger": "^3.0.2",
