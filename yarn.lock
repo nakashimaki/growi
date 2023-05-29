@@ -15775,9 +15775,10 @@ simple-line-icons@^2.5.5:
   dependencies:
     less "^3.12.2"
 
-simple-load-script@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/simple-load-script/-/simple-load-script-1.0.2.tgz#d92951fe7b601ad90af8c9429bd4b2ee127ab8a3"
+simple-load-script@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/simple-load-script/-/simple-load-script-2.0.0.tgz#e71cda185437e1042035a478f525eacaa4b5beeb"
+  integrity sha512-KYlKaZH7jW4pI5zHZxwFuERrYZZIIQDOOz+zgB70+Xt69EHoFJ4kkyyJk1PfpUvOHLRyz3PSwDAUEIlfRQKNow==
 
 simple-swizzle@^0.2.2:
   version "0.2.2"

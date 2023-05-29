@@ -242,7 +242,7 @@
     "replacestream": "^4.0.3",
     "sass": "^1.53.0",
     "simple-line-icons": "^2.5.5",
-    "simple-load-script": "^1.0.2",
+    "simple-load-script": "^2.0.0",
     "simplebar-react": "^2.3.6",
     "socket.io-client": "^4.2.0",
     "source-map-loader": "^4.0.1",
